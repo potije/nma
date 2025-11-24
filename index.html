@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>nma</title>
+  <script src="https://unpkg.com/htmx.org"></script>
+
+  <style>
+    body {
+      margin: 0 auto;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #111111;
+      color: #f6f6f6;
+      font-family: Helvetica, sans-serif;
+    }
+
+    .square {
+      display: grid;
+      place-items: center;
+    }
+
+    .square.htmx-added {
+      animation: fadeIn 0.2s linear forwards;
+    }
+
+    .square.htmx-swapping {
+      animation: fadeOut 0.2s linear forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9) translateX(200px);}
+      to   { opacity: 1; transform: scale(1) translateX(0px);}
+    }
+
+    @keyframes fadeOut {
+      from { opacity: 1; transform: scale(1) translateX(0px); }
+      to   { opacity: 0; transform: scale(0.9) translateX(-200px); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(200px);}
+      to   { opacity: 1; transform: translateX(0px);}
+    }
+
+    #jakob {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 400px;
+      z-index: -1;
+      animation: slideIn 1s linear forwards;
+    }
+  </style>
+</head>
+
+<body
+    hx-trigger="load"
+    hx-get="/welcome.html"
+    hx-target="#body"
+    hx-swap="innerHTML">
+    <img id="jakob" src="jakob.png" alt="jakob">
+    <div id="body">
+
+    </div>
+</body>
+</html>
