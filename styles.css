@@ -1,0 +1,108 @@
+body {
+    margin: 0 15%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #111111;
+    color: #f6f6f6;
+    font-family: Helvetica, sans-serif;
+}
+
+.square {
+    display: grid;
+    place-items: center;
+    /*
+    background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.8) 20%,
+    rgba(0, 0, 0, 0.8) 80%,
+    transparent 100%
+    );
+    background: radial-gradient(
+        circle,
+        rgba(255,0,0,0.8) 0%,
+        transparent 100%
+    );
+    */
+    text-shadow: 2px 2px #ff000055;
+}
+
+.square.htmx-added {
+    animation: fadeIn 0.2s linear forwards;
+}
+
+.square.htmx-swapping {
+    animation: fadeOut 0.2s linear forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateX(200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateX(0px);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1) translateX(0px);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.9) translateX(-200px);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+#jakob {
+    position: absolute;
+    bottom: -100px;
+    right: 0;
+    height: 400px;
+    z-index: -1;
+    animation: slideIn 1s linear forwards;
+}
+
+#computer {
+    position: absolute;
+    top: 50px;
+    height: 200px;
+    z-index: -1;
+    animation: slideIn 1s linear forwards;
+}
+
+#welcomelist li {
+    padding: 2px;
+}
+
+.action {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@keyframes jump {
+  0%   { transform: scale(1); }
+  20%  { transform: scale(1.1); }
+  40%  { transform: scale(1); }
+  100% { transform: scale(1); }
+}

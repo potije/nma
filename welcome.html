@@ -1,9 +1,27 @@
 <div id="welcome" class="square">
     <h1>no messin about</h1>
-    <p style="margin: 0">a computer science tutor who:</p>
-    <ul style="padding: 0;">
-        <li>starts with the basics</li>
-        <li>teaches <b>coding</b>, not <s>vibe-coding</s></li>
-        <li>offers human support,<br> not ai hallucinations</li>
+    <p style="margin: 0">A computer science tutor who:</p>
+    <ul id="welcomelist" style="padding: 0;">
+        <li>can start from the 
+            <b
+            style="cursor: help;"
+            hx-get="/vibecoding.html"
+            hx-target="#welcome"
+            hx-swap="outerHTML settle:0.2s swap:0.2s"
+            >basics(?)</b>
+        </li>
+        <li>teaches <b>coding</b>, not 
+            <b
+            style="cursor: help;"
+            hx-get="/vibecoding.html"
+            hx-target="#welcome"
+            hx-swap="outerHTML settle:0.2s swap:0.2s">vibe coding(?)</b>
+        </li>
+        <li>offers <b>human support</b>, no ai involved</li>
+        <li>welcomes <b>all ages</b> (toddlers to titans)</li>
     </ul>
+    <div class="action">
+        <p style="animation: jump 6s linear forwards infinite;">more about me</p>
+        <p style="animation: jump 6s linear forwards infinite 3s;">get in touch!</p>
+    </div>
 </div>
