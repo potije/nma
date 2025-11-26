@@ -1,17 +1,66 @@
 body {
-    margin: 0 15%;
-    height: 100vh;
-    display: grid;
-    place-items: center;
     background: #111111;
     color: #f6f6f6;
     font-family: Helvetica, sans-serif;
 }
 
-.square {
+a {
+    color: red;
+}
+
+a:hover {
+    color: orange;
+}
+
+a:visited {
+    color:purple;
+}
+
+
+.layout1 {
+    height: 100vh;
     display: grid;
-    place-items: center;
-    /*
+    grid-template-rows: 1fr 2fr;
+}
+
+.layout1 h1 {
+    position: absolute;
+    bottom: 0;
+    text-shadow: 2px 2px #111111;
+    text-align: center;
+}
+
+.layout1 #jakob {
+    position: absolute;
+    top: 5%;
+    height: 100%;
+    z-index: -1;
+    animation: slideIn 2s ease forwards;
+}
+
+.layout1 #nopanic {
+    position: absolute;
+    top: 5%;
+    height: 90%;
+    z-index: -1;
+}
+
+.layout1 #computer {
+    position: absolute;
+    top: 5%;
+    height: 100%;
+    z-index: -2;
+}
+
+.layout1 .content {
+    padding: 1em;
+}
+
+.layout1 p {
+    text-align: center;
+}
+
+/*
     background: linear-gradient(
     to bottom,
     transparent 0%,
@@ -24,41 +73,19 @@ body {
         rgba(255,0,0,0.8) 0%,
         transparent 100%
     );
-    */
     text-shadow: 2px 2px #ff000055;
+    */
+
+
+body.htmx-added, .layout1.htmx-added {
+    animation: slideIn 0.2s linear forwards;
 }
 
-.square.htmx-added {
-    animation: fadeIn 0.2s linear forwards;
+body.htmx-swapping, .layout1.htmx-swap {
+    animation: slideOut 0.2s linear forwards;
 }
 
-.square.htmx-swapping {
-    animation: fadeOut 0.2s linear forwards;
-}
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9) translateX(200px);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1) translateX(0px);
-    }
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-        transform: scale(1) translateX(0px);
-    }
-
-    to {
-        opacity: 0;
-        transform: scale(0.9) translateX(-200px);
-    }
-}
 
 @keyframes slideIn {
     from {
@@ -72,21 +99,16 @@ body {
     }
 }
 
-#jakob {
-    position: absolute;
-    bottom: -100px;
-    right: 0;
-    height: 400px;
-    z-index: -1;
-    animation: slideIn 1s linear forwards;
-}
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
 
-#computer {
-    position: absolute;
-    top: 50px;
-    height: 200px;
-    z-index: -1;
-    animation: slideIn 1s linear forwards;
+    to {
+        opacity: 0;
+        transform: translateX(-200px);
+    }
 }
 
 #welcomelist li {
@@ -94,15 +116,14 @@ body {
 }
 
 .action {
+    position: absolute;
+    bottom: 0;
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: space-around;
 }
 
-@keyframes jump {
-  0%   { transform: scale(1); }
-  20%  { transform: scale(1.1); }
-  40%  { transform: scale(1); }
-  100% { transform: scale(1); }
+.pointer {
+    cursor: pointer;
 }

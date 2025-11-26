@@ -3,18 +3,12 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>nma</title>
+  <title>nma tutoring</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/htmx.org"></script>
 </head>
 
-<body hx-trigger="load" hx-get="/welcome.html" hx-target="#body" hx-swap="innerHTML">
-  <img id="jakob" src="jakob.png" alt="jakob">
-  <img id="computer" src="computer.png" alt="computer">
-  <div id="body">
-
-  </div>
-</body>
+<body hx-trigger="load" hx-get="/welcome.html" hx-target="body" hx-swap="innerHTML settle:0.2s swap:0.2s"></body>
 
 </html>
