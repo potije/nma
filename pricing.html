@@ -1,4 +1,4 @@
-<section class="layout1">
+<section class="layout1 side">
     <div style="display: grid; place-items: center; position: relative">
         <img id="payment" src="payment.png" alt="payment">
         <h1 style="text-align: right;">pricing</h1>
@@ -12,7 +12,7 @@
         <p>cancellation fee (24h prior): 50%</p>
     </div>
     <div class="action">
-        <p class="pointer" hx-get="/welcome.html" hx-target="body" hx-swap="innerHTML swap:0.2s settle:0.2s">
+        <p class="pointer" hx-get="/welcome.html" hx-target=".layout1" hx-swap="outerHTML swap:0.2s settle:0.2s">
             <em><span>&#8656;</span> home <span>&#8656;</span></em>
         </p>
     </div>

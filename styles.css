@@ -70,7 +70,6 @@ p  {
     z-index: -2;
 }
 
-
 .layout1 .content {
     padding: 1em;
 }
@@ -79,15 +78,35 @@ p  {
     text-align: center;
 }
 
-body.htmx-added, .layout1.htmx-added {
-    animation: slideIn 0.2s linear forwards;
+.main.htmx-added {
+    animation: slideInLeft 0.2s linear forwards;
 }
 
-body.htmx-swapping, .layout1.htmx-swap {
-    animation: slideOut 0.2s linear forwards;
+.main.htmx-swapping {
+    animation: slideOutLeft 0.2s linear forwards;
 }
 
-@keyframes slideIn {
+.side.htmx-added {
+    animation: slideInRight 0.2s linear forwards;
+}
+
+.side.htmx-swapping {
+    animation: slideOutRight 0.2s linear forwards;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes slideInRight {
     from {
         opacity: 0;
         transform: translateX(200px);
@@ -99,7 +118,7 @@ body.htmx-swapping, .layout1.htmx-swap {
     }
 }
 
-@keyframes slideOut {
+@keyframes slideOutLeft {
     from {
         opacity: 1;
         transform: translateX(0);
@@ -108,6 +127,18 @@ body.htmx-swapping, .layout1.htmx-swap {
     to {
         opacity: 0;
         transform: translateX(-200px);
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(200px);
     }
 }
 
