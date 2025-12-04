@@ -1,18 +1,25 @@
-<section class="layout1 side">
-    <div style="display: grid; place-items: center; position: relative">
-        <img id="phone" src="phone.png" alt="no panic">
+<article class="card side">
+    <header style="display: grid; place-items: center; position: relative">
+        <img id="phone" src="phone.png" alt="Old phone">
         <h1>let's talk options</h1>
-    </div>
-    <div class="content">
-        <p>book a <b>free</b>, <b>online</b><br><a href="https://calendar.app.google/JXfgNBKCQ5skJtQG9">calendar appointment</a></p>
-        <br>
-        <p>alternatives:</p>
-        <p><a href="mailto:jakobstanleywarth@gmail.com">jakobstanleywarth@gmail.com</a></p>
-        <p><a href="tel:+393279990511">+39 327 999 0511</a></p>
-    </div>
-    <div class="action">
-        <p class="pointer" hx-get="/welcome.html" hx-target=".layout1" hx-swap="outerHTML swap:0.2s settle:0.2s">
-            <em><span>&#8656;</span> home <span>&#8656;</span></em>
+    </header>
+    <address aria-label="Contact methods">
+        <p>book a <b>free</b>, <b>online</b>
+            <br>
+            <a href="https://calendar.app.google/JXfgNBKCQ5skJtQG9">
+                calendar appointment</a>
         </p>
-    </div>
-</section>
+
+        <p>alternatives:</p>
+
+        <ul style="list-style: none; padding: 0; margin: 0;">
+            <li>
+                <a href="mailto:jakobstanleywarth@gmail.com">jakobstanleywarth@gmail.com</a>
+            </li>
+            <li>
+                <a href="tel:+393279990511">+39 327 999 0511</a>
+            </li>
+        </ul>
+    </address>
+    <div id="navhome" hx-get="nav_home.html" hx-target="#navhome" hx-trigger="load" hx-swap="outerHTML"></div>
+</article>

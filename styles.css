@@ -2,80 +2,128 @@ body {
     background: #111111;
     color: #f6f6f6;
     font-family: Helvetica, sans-serif;
-    margin-top: 0;
 }
 
 a {
+    font-size: large;
     color: red;
+    font-style: italic;
 }
 
 a:hover {
-    color: red;
+    color: lightcoral;
 }
 
 a:visited {
-    color: red;
+    color: lightcoral;
 }
 
-p  {
+p {
     font-size: large;
 }
 
-.layout1 {
+.card {
     height: 100vh;
     display: grid;
     grid-template-rows: 1fr 2fr;
 }
 
-.layout1 h1 {
+.card header h1 {
     position: absolute;
     bottom: 0;
     text-shadow: 2px 2px #111111;
+}
+
+.card h1,
+h2,
+p {
     text-align: center;
 }
 
-.layout1 #jakob {
+.card header #jakob {
     position: absolute;
     top: 5%;
     height: 100%;
     z-index: -1;
-    animation: slideIn 2s ease forwards;
+    animation: slideInLeft 2s ease forwards;
 }
 
-.layout1 #phone {
+.card header #phone {
     position: absolute;
     top: 5%;
     height: 80%;
     z-index: -1;
 }
 
-.layout1 #computer {
+.card header #computer {
     position: absolute;
     top: 5%;
     height: 100%;
     z-index: -2;
 }
 
-.layout1 #brainchip {
+.card header #brainchip {
     position: absolute;
     top: 5%;
     height: 80%;
     z-index: -2;
 }
 
-.layout1 #payment {
+.card header #payment {
     position: absolute;
     top: 5%;
     height: 100%;
     z-index: -2;
 }
 
-.layout1 .content {
+.card section {
     padding: 1em;
 }
 
-.layout1 p, h3 {
+.card section ul {
     text-align: center;
+}
+
+.card address ul {
+    text-align: center;
+}
+
+.card section ul li {
+    padding: .5em 0;
+}
+
+.card section table {
+    width: 100%; 
+    max-width: 400px;
+    margin: 0 auto;
+    font-size: large;
+}
+
+.card section table thead th{
+    padding-bottom: .5em;
+    /* Optional: Add a border to separate them even more clearly */
+    border-bottom: 1px dashed #ccc;
+}
+
+.card section table td {
+    padding: .5em 0;
+    text-align: center;
+}
+
+.action {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            #111 30%);
+}
+
+.action a {
+    padding: 2em;
 }
 
 .main.htmx-added {
@@ -92,6 +140,16 @@ p  {
 
 .side.htmx-swapping {
     animation: slideOutRight 0.2s linear forwards;
+}
+
+.action {
+    opacity: 0;
+    animation: fadeIn 1s linear forwards .5s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 @keyframes slideInLeft {
@@ -140,22 +198,4 @@ p  {
         opacity: 0;
         transform: translateX(200px);
     }
-}
-
-.action {
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        #111 30%
-);
-}
-
-.pointer {
-    cursor: pointer;
 }

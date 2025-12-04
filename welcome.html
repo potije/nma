@@ -1,14 +1,33 @@
-<section class="layout1 main">
-    <div style="display: grid; place-items: center; position: relative">
-        <img id="jakob" src="jakob.png" alt="jakob">
-        <img id="computer" src="computer.png" alt="computer">
+<article class="card main">
+    <header style="display: grid; place-items: center; position: relative">
+        <img id="jakob" src="jakob.png" alt="Portrait of Jakob">
+        <img id="computer" src="computer.png" alt="" role="Computer">
         <h1>no messin about<br>tutor</h1>
-    </div>
-    <div class="content">
+    </header>
+
+    <section aria-label="Introduction and Links">
         <p>I'm jakob, your 100% human computer science tutor!</p>
-        <br>
-        <p class="pointer" hx-get="/letstalk.html" hx-target=".layout1" hx-swap="outerHTML swap:0.2s settle:0.2s"><em>let's talk</em></p>
-        <p class="pointer" hx-get="/whatiteach.html" hx-target=".layout1" hx-swap="outerHTML swap:0.2s settle:0.2s"><em>what I teach</em></p>
-        <p class="pointer" hx-get="/pricing.html" hx-target=".layout1" hx-swap="outerHTML swap:0.2s settle:0.2s"><em>pricing</em></p>
-    </div>
-</section>
+        <nav>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li>
+                    <a id="letstalklink" href="/letstalk.html" hx-get="/letstalk.html" hx-target=".card"
+                        hx-push-url="false" hx-swap="outerHTML swap:0.2s settle:0.2s">
+                        let's talk
+                    </a>
+                </li>
+                <li>
+                    <a id="whatiteachlink" href="/whatiteach.html" hx-get="/whatiteach.html" hx-target=".card"
+                        hx-push-url="false" hx-swap="outerHTML swap:0.2s settle:0.2s">
+                        what I teach
+                    </a>
+                </li>
+                <li>
+                    <a id="pricinglink" href="/pricing.html" hx-get="/pricing.html" hx-target=".card"
+                        hx-push-url="false" hx-swap="outerHTML swap:0.2s settle:0.2s">
+                        pricing
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+</article>
