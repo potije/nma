@@ -8,6 +8,7 @@ a {
     font-size: large;
     color: red;
     font-style: italic;
+    cursor: pointer;
 }
 
 a:hover {
@@ -48,7 +49,7 @@ p {
     animation: slideInLeft 2s ease forwards;
 }
 
-.card header #phone {
+.card header #telephone {
     position: absolute;
     top: 5%;
     height: 80%;
