@@ -1,0 +1,44 @@
+<article class="card side">
+    <header style="display: grid; place-items: center; position: relative">
+        <img id="payment" src="payment.png" alt="Card reader">
+        <h1>tariffario</h1>
+    </header>
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">categoria</th>
+                    <th scope="col" style="text-align: center;">individuale</th>
+                    <th scope="col" style="text-align: center;">gruppo</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th scope="row" style="font-weight: normal;">curricolare</th>
+                    <td>€25</td>
+                    <td>€20</td>
+                </tr>
+                <tr>
+                    <th scope="row" style="font-weight: normal;">extra<br>curricolare</th>
+                    <td>€20</td>
+                    <td>€15</td>
+                </tr>
+            </tbody>
+
+            <!-- tfoot is specifically for summaries or notes about the table data -->
+            <tfoot>
+                <tr>
+                    <td colspan="3" style="padding-top: 1em;">
+                        <!-- <small> is the correct tag for "fine print" or disclaimers -->
+                        <small>
+                            cancellazione (24h prima): 50%<br>
+                            massimo 3 persone per gruppo
+                        </small>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+    <div id="navcasa" hx-get="nav_casa.html" hx-target="#navcasa" hx-trigger="load" hx-swap="outerHTML"></div>
+</article>
