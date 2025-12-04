@@ -4,6 +4,12 @@ body {
     font-family: Helvetica, sans-serif;
 }
 
+html, body {
+    overflow-x: hidden; /* completely disables horizontal scroll */
+    width: 100%;
+    margin: 0;
+}
+
 a {
     font-size: large;
     color: red;
@@ -59,7 +65,7 @@ p {
 .card header #computer {
     position: absolute;
     top: 5%;
-    height: 100%;
+    height: 80%;
     z-index: -2;
 }
 
